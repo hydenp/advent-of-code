@@ -26,21 +26,21 @@ LOSS = 0
 DRAW = 3
 WIN = 6
 
-# points per play
-X = 1  # rock
-Y = 2  # paper
-Z = 3  # scissors
+# points per results
+ROCK = 1  # rock
+PAPER = 2  # paper
+SCISSORS = 3  # scissors
 
 SCORE_MODEL = {
-    'A X': DRAW + X,
-    'B Y': DRAW + Y,
-    'C Z': DRAW + Z,
-    'A Z': LOSS + Z,
-    'B X': LOSS + X,
-    'C Y': LOSS + Y,
-    'A Y': WIN + Y,
-    'B Z': WIN + Z,
-    'C X': WIN + X,
+    'A X': DRAW + ROCK,  # draw with rock
+    'B Y': DRAW + PAPER,  # draw with paper
+    'C Z': DRAW + SCISSORS,  # draw with scissors
+    'A Z': LOSS + SCISSORS,  # loose to rock with scissors
+    'B X': LOSS + ROCK,  # loose to paper with rock
+    'C Y': LOSS + PAPER,  # loose to scissors with paper
+    'A Y': WIN + PAPER,  # win with paper against rock
+    'B Z': WIN + SCISSORS,  # win wih scissors against paper
+    'C X': WIN + ROCK,  # win with rock against scissors
 }
 
 score = 0
