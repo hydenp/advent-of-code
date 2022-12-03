@@ -1,6 +1,6 @@
 def find_duplicate(input_line):
     """find the character that exists in both halves of the input_line"""
-    first_have_characters = {c for c in input_line[:len(input_line) // 2]}
+    first_have_characters = {input_line[:len(input_line) // 2]}
     for c in input_line[len(input_line) // 2:]:
         if c in first_have_characters:
             return c
